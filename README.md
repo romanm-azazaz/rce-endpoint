@@ -3,7 +3,7 @@ Simple python http server to demonstrate RCE vulnerabilities.
 
 ### Run
 ```
-lomaha@rce-endpoint % python3 main.py -a=127.0.0.1 -p=80 -u=/ping -c='ping -c 1'
+lomaha@rce-endpoint % python3 rce-endpoint.py -a=127.0.0.1 -p=80 -u=/ping -c='ping -c 1'
 ```
 ### Use
 #### Client side:
