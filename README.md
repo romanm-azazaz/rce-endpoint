@@ -1,5 +1,5 @@
 # rce-endpoint
-A simple python http server to demonstrate RCE vulnerabilities.
+Simple python http server to demonstrate RCE vulnerabilities.
 
 ### Run
 ```
