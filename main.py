@@ -4,7 +4,6 @@ import argparse
 import os
 import subprocess
 
-
 class MyServer(BaseHTTPRequestHandler):
     def do_GET(self):
         self.send_response(200) 
@@ -38,7 +37,6 @@ def processing_request(request_path, request_query):
         if query[0] == "ip":
             result = ping_command(query[1])
     return result
-
 
 def main():
     try:
