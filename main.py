@@ -1,5 +1,5 @@
 from http.server import BaseHTTPRequestHandler, HTTPServer
-from urllib.parse import urlparse
+from urllib.parse import urlparse, unquote
 import argparse
 import os
 import subprocess
@@ -10,11 +10,10 @@ class MyServer(BaseHTTPRequestHandler):
         self.send_response(200) 
         self.send_header("Content-type", "text/html") 
         self.end_headers()
-        url = urlparse(self.path)
+        url_decode = unquote(self.path)
+        url = urlparse(url_decode)
         result = processing_request(url.path, url.query)
         self.wfile.write(bytes(f"{result}\n", "utf-8"))
-
-        
 
 def create_parser():
     parser = argparse.ArgumentParser()
